@@ -1,0 +1,129 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UserMaster.master.cs" Inherits="UserMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<title>Used Stuffs</title>
+<link rel="stylesheet" type="text/css" href="CSS/style.css" />
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="iecss.css" />
+<![endif]-->
+<script type="text/javascript" src="JS/boxOver.js"></script>
+<script type="text/javascript" src="JS/jquery.min.js"></script>
+<script type="text/javascript" src="JS/ddaccordion.js"></script>
+<script  type="text/javascript" src="JS/jquery1.min.js"></script>
+<script  type="text/javascript" src="JS/responsiveslides.min.js"></script>
+<script type="text/javascript">
+    ddaccordion.init({
+        headerclass: "odd", //Shared CSS class name of headers group
+        contentclass: "even", //Shared CSS class name of contents group
+        revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+        mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+        collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
+        defaultexpanded: [], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+        onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+        animatedefault: false, //Should contents open by default be animated into view?
+        persiststate: true, //persist state of opened contents within browser session?
+        toggleclass: ["", ""], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+        togglehtml: ["suffix", "<img src='images/plus.gif' class='statusicon' />", "<img src='images/minus.gif' class='statusicon' />"], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+        animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+        oninit: function (headers, expandedindices) { //custom code to run when headers have initalized
+            //do nothing
+        },
+        onopenclose: function (header, index, state, isuseractivated) { //custom code to run whenever a header is opened or closed
+            //do nothing
+        }
+    })
+   
+</script>
+<script type="text/javascript">
+    $(function () {
+        $(".rslides").responsiveSlides({pause: true});
+    });
+</script>
+</head>
+<body>
+
+<div id="main_container">
+	<div id="header">
+        
+        <div id="logo">
+           <img src="images/logo.png" alt="" title="" border="0" width="237" height="140" />
+           <p id="welcome" style="float:right;margin-top:6%;font-family:Cursive;color:Maroon; font-weight:bold;font-size:large" runat="server"></p>
+	    </div>
+        
+
+    </div>
+    
+   <div id="main_content"> 
+   
+            <div id="menu_tab">
+            <div class="left_menu_corner"></div>
+                    <ul class="menu">
+                         <li><a href="Index" class="nav1">Home </a></li>
+                         <li class="divider"></li>
+                         <li><a href="Products" class="nav2">Products</a></li>
+                         <li class="divider"></li>
+                          <li><a href="PostProd" class="nav2">Post Product</a></li>
+                         <li class="divider"></li>
+                         <li><a href="Account" class="nav4">My account</a></li>
+                         <li class="divider"></li>
+                         <li id="sign" runat="server"><a href="Signup" class="nav4">Sign Up</a></li>
+                         <li class="divider" id="div" runat="server"></li>                         
+                         <li><a runat="server" id="log" class="nav7"></a></li>
+                         <li class="divider"></li>
+                         <li><a href="About" class="nav6">About me</a></li>
+                         <li class="divider"></li>
+                         
+                    </ul>
+
+             <div class="right_menu_corner"></div>
+            </div><!-- end of menu tab -->
+            
+    <div style="margin-bottom:1%;">
+    
+    
+    </div>        
+    
+    
+   <!-- end of left content -->
+   
+   
+   <%--<div class="center_content">--%>
+    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    
+  
+   <%--</div>--%><!-- end of center content -->
+   
+   
+   <!-- end of right content -->   
+   
+            
+   </div><!-- end of main content -->
+   
+   
+   
+   <div class="footer">
+   
+   <div class="left_footer">
+   Supported browsers : Mozilla Firefox, Google Chrome, Opera Mini, Internet Explorer(8.0 & above). 
+   </div>
+       
+        
+        <div class="right_footer">
+        <a href="Index">home</a>
+        <a href="About">about</a>
+        </div>   
+   
+   </div>                 
+   
+
+</div>
+<!-- end of main_container -->
+</body>
+</html>
